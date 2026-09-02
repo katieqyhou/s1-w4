@@ -8,9 +8,9 @@ public class Name {
        myFirst = first;
        myMiddle = middle;
        myLast = last;
-       fixFirst ( );
-       fixMiddle ( );
-       fixLast ( );
+       fixCase (myFirst);
+       fixCase (myMiddle );
+       fixCase (myLast );
     }
     
     public String lastFirst ( ) {
@@ -20,7 +20,11 @@ public class Name {
     public String fullName ( ) {
        return myFirst + " " + myMiddle + " " + myLast;
     }
-    
+    public void fixCase(String np){
+       myFirst = myFirst.toLowerCase().trim();
+       myFirst = myFirst.substring(0,1).toUpperCase() + myFirst.substring(1);
+    }
+
     // bad style
     private void fixFirst ( ) {
        myFirst = myFirst.toLowerCase().trim();
